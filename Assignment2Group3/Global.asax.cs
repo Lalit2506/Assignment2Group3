@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,6 +13,9 @@ namespace Assignment2Group3
     {
         protected void Application_Start()
         {
+
+            Database.SetInitializer(new DropCreateDatabaseAlways<Assignment2Group3.Models.AdsContext>());
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
